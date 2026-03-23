@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="HisaabAI — AI-powered smart bookkeeping for Indian stores. Track sales, expenses, customer udhar, and get AI business insights.">
+    <meta name="theme-color" content="#0f0a1e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/onboarding.css">
+    <title>HisaabAI — AI-Powered Smart Bookkeeping</title>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo">🤖</div>
+            <h1 class="splash-title">HisaabAI</h1>
+            <p class="splash-subtitle">AI-Powered Smart Bookkeeping</p>
+            <div class="splash-loader">
+                <div class="splash-loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onboarding Screen (Wizard) -->
+    <div id="onboarding-screen" class="onboarding-screen hidden">
+        <div class="onboarding-container" id="onboarding-container">
+            <!-- Steps injected by JS -->
+        </div>
+    </div>
+
+    <!-- App Shell -->
+    <div id="app" class="app hidden">
+        <!-- Header -->
+        <header id="app-header" class="app-header">
+            <div class="header-left">
+                <h1 class="header-title" id="page-title">HisaabAI</h1>
+            </div>
+            <div class="header-right">
+                <button id="btn-notifications" class="header-icon-btn" aria-label="Notifications">
+                    🔔
+                </button>
+            </div>
+        </header>
+
+        <!-- Page Container -->
+        <main id="page-container" class="page-container">
+            <div id="page-dashboard" class="page active" data-page="dashboard"></div>
+            <div id="page-khata" class="page" data-page="khata"></div>
+            <div id="page-add" class="page" data-page="add"></div>
+            <div id="page-ai" class="page" data-page="ai"></div>
+            <div id="page-history" class="page" data-page="history"></div>
+            <div id="page-customers" class="page" data-page="customers"></div>
+            <div id="page-reports" class="page" data-page="reports"></div>
+            <div id="page-settings" class="page" data-page="settings"></div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav id="bottom-nav" class="bottom-nav">
+            <a href="#dashboard" class="nav-item active" data-nav="dashboard" id="nav-dashboard">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#history" class="nav-item" data-nav="history" id="nav-history">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">History</span>
+            </a>
+            <a href="#add" class="nav-item nav-item-add" data-nav="add" id="nav-add">
+                <span class="nav-icon-add">＋</span>
+            </a>
+            <a href="#ai" class="nav-item" data-nav="ai" id="nav-ai">
+                <span class="nav-icon">🤖</span>
+                <span class="nav-label">AI CA</span>
+            </a>
+            <a href="#settings" class="nav-item" data-nav="settings" id="nav-settings">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">More</span>
+            </a>
+        </nav>
+
+        <!-- Modal Overlay -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+
+        <!-- Toast Container -->
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/ai-engine.js"></script>
+    <script src="js/ai-insights.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/khata.js"></script>
+    <script src="js/transactions.js"></script>
+    <script src="js/customers.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/onboarding.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Add Screen</title>
+</head>
+<body>
+    <div id="page-add"></div>
+    <div id="toast-container"></div>
+    
+    <script>
+        const localStorageMock = {};
+        window.localStorage = {
+            getItem: (key) => localStorageMock[key] || null,
+            setItem: (key, val) => { localStorageMock[key] = val; }
+        };
+        
+        window.App = {
+            showToast: (msg, type) => console.log('TOAST', type, msg),
+            showModal: () => {},
+            closeModal: () => {}
+        };
+    </script>
+    <script src="js/store.js"></script>
+    <script src="js/transactions.js"></script>
+    
+    <script>
+        window.onerror = function(msg, url, line) {
+            document.body.innerHTML += '<h2 style="color:red">ERROR: ' + msg + ' at line ' + line + '</h2>';
+            return false;
+        };
+        try {
+            Transactions.render();
+            document.body.innerHTML += '<h2 style="color:green">RENDER SUCCESS</h2>';
+        } catch(e) {
+            document.body.innerHTML += '<h2 style="color:red">CATCH ERROR: ' + e.message + '</h2>';
+            console.error(e);
+        }
+    </script>
+</body>
+</html>
